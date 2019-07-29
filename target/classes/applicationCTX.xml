@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bmiCalc" class="com.javalec.bmiEx.BMICalc">
+ 		
+ 		<property name="lowWeight" value="18.5"/>
+ 		<property name="normal" value="23"/>
+ 		<property name="overWeight" value="25"/>
+ 		<property name="obesity" value="30"/>
+ 	</bean>
+ 	
+ 	<bean id="myInfo" class="com.javalec.bmiEx.MyInfo">
+ 		
+ 		<property name="name" value="Kyu"/>
+ 		<property name="height" value="177"/>
+ 		<property name="weight" value="70"/>
+ 		
+ 		<!-- ArrayList<String> hobbies -->
+ 		<property name="hobbies">
+ 			<list>
+ 				<value>programming</value>
+ 				<value>coding</value>
+ 				<value>sleeping</value>
+ 			</list>
+ 		</property>
+ 		
+ 		<property name="bmiCalc">
+ 			<ref bean="bmiCalc"/> 
+ 		</property> 
+ 	</bean>
+</beans>
