@@ -7,10 +7,10 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//xml DI
-		String configLocation = "classpath:applicationCTX.xml";
-		AbstractApplicationContext ctx = new GenericXmlApplicationContext(configLocation);
-		MyInfo myInfo = ctx.getBean("myInfo", MyInfo.class);
+		//xml-based DI
+		String configLocation = "classpath:applicationCTX.xml";	
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext(configLocation);	//create a spring container	
+		MyInfo myInfo = ctx.getBean("myInfo", MyInfo.class);	//get bean (components) from the container.
 		
 		myInfo.getInfo();
 		ctx.close();
